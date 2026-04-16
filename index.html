@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Connect 4</h1>
+      </header>
+
+      <section class="scoreboard" aria-label="Game Information">
+
+        <div class="score-card">
+          <span class="label">Player 1</span>
+          <span id="scoreP1" class="score">0</span>
+        </div>
+
+        <div class="turn-card">
+          <span class="label">Current Turn</span>
+          <span id="turnText" class="turn">Player 1</span>
+        </div>
+
+        <div class="score-card">
+          <span class="label">Player 2</span>
+          <span id="scoreP2" class="score">0</span>
+        </div>
+        
+      </section>
+
+      <section class="controls" aria-label="General">
+        <button id="helpBtn" class="btn">How to Play (H)</button>
+        <button id="resetBtn" class="btn btn-primary">Reset Game (R)</button>
+      </section>
+
+      <section id="helpPanel" class="help-panel hidden" aria-live="polite">
+        <h2>How to Play</h2>
+
+        <p>
+          Players take turns choosing a column from 1 to 7. The token drops to the lowest open space. Get four tokens in a row horizontally, vertically, or diagonally to win.
+        </p>
+
+        <p>
+          Keyboard shortcuts: press <strong>1-7</strong> to choose a column, <strong>R</strong> to reset, and <strong>H</strong> to open/close this help panel.
+        </p>
+
+      </section>
+
+      <section class="column-controls" aria-label="Column Buttons">
+        <div id="columnButtons" class="column-buttons"></div>
+      </section>
+
+      <section class="board-section" aria-label="Connect 4 board">
+        <div id="board" class="board" role="grid" aria-label="Connect 4 Board"></div>
+      </section>
+
+      <section class="message-area" aria-live="polite" aria-atomic="true">
+        <p id="messageText">Player 1 starts.</p>
+      </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+  </body>
+
+</html>
