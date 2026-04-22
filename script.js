@@ -21,6 +21,26 @@ const resetBtn = document.getElementById("resetBtn");
 const helpBtn = document.getElementById("helpBtn");
 const helpPanel = document.getElementById("helpPanel");
 
+const colorModeSelect = document.getElementById("colorMode");
+const savedMode = localStorage.getItem("colorMode");
+if (savedMode) {
+  changeColorMode(savedMode);
+  colorModeSelect.value = savedMode;
+}
+
+function changeColorMode(mode) {
+  document.body.classList.remove(
+    "protanopia",
+    "deuteranopia",
+    "tritanopia",
+    "highContrast"
+  );
+
+  if (mode !== "default") {
+    document.body.classList.add(mode);
+  }
+}
+
 function createBoard() {
   return Array.from({length: ROWS}, () => Array(COLS).fill(0));
 }
@@ -207,6 +227,12 @@ document.addEventListener("keydown", (event) => {
   } else if (key === "h") {
     toggleHelp();
   }
+});
+
+colorModeSelect.addEventListener("change", (e) => {
+  const mode = e.target.value;
+  changeColorMode(mode);
+  localStorage.setItem("colorMode", mode);
 });
 
 resetBtn.addEventListener("click", resetGame);

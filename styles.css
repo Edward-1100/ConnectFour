@@ -238,3 +238,18 @@ body {
     font-size: 2rem;
   }
 }
+
+
+/*Colour Blind Options*/
+
+body.protanopia .disc.p1 {background: #0072B2;}
+body.protanopia .disc.p2 {background: #E69F00;}
+
+body.deuteranopia .disc.p1 {background: #56B4E9;}
+body.deuteranopia .disc.p2 {background: #F0E442;}
+
+body.tritanopia .disc.p1 {background: #D55E00;}
+body.tritanopia .disc.p2 {background: #009E73;}
+
+body.highContrast .disc.p1 {background: #000033;}
+body.highContrast .disc.p2 {background: #ff00ff; border: 2px solid black;}
